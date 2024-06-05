@@ -5,16 +5,15 @@ on: push
 jobs:
   super-lint:
     name: lint code base
-
     runs-on: ubuntu-latest
-
     steps:
-     - name: Checkout code
-       uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-     - name: Run Super-linter
-       uses: github/Super-Linter@v3
-       env:
-         python-version: '3.8'
-	 run-name: main
-	 defaults: ${{ secrets.GITHUB_TOKEN }}
+      - name: Run Super-linter
+        uses: github/Super-Linter@v3
+        env:
+          python-version: '3.8'
+          DEFAULT_BRANCH: main
+          DEFAULTS: ${{ secrets.GITHUB_TOKEN }}
+
